@@ -184,9 +184,10 @@ We will carry over the project “BLE_Client_GAP_test” and use it as the basel
 What we want to do is connect to the WB5MM and interact with the three services in it.
 
 Just to recap, we have a:
--WRITE service with UUID 0x0001 and a characteristic of UUID 0x0002 where updating the characteristic will print the updated value ion the OLED screen of the WB5
--NOTIFY service of UUID 0x0003 with a characteristic UUID of 0x0004 where enabling the notification will start a counter. The counter is then published on the OLED screen as well as published within the notification.
--READ service of UUID 0x0005 and characteristic UUID of 0x0006 where reading out will read out an attached BMP280 sensor’s ID and send the value to the client.
+
+- WRITE service with UUID 0x0001 and a characteristic of UUID 0x0002 where updating the characteristic will print the updated value ion the OLED screen of the WB5
+- NOTIFY service of UUID 0x0003 with a characteristic UUID of 0x0004 where enabling the notification will start a counter. The counter is then published on the OLED screen as well as published within the notification.
+- READ service of UUID 0x0005 and characteristic UUID of 0x0006 where reading out will read out an attached BMP280 sensor’s ID and send the value to the client.
 
 If the UUID values are not these, modify your WB5MM code to match them.
 
