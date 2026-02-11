@@ -82,9 +82,9 @@ With the hardware definition dealt with, let’s take a dive into the definition
 
 Ant the callbacks, of course:
 
--connected: callback from the BLE connection state (same as for server). Disconnects from the device right after connecting. Takes the connection handle and the error code as input.
--disconnected: callback from the BLE connection state. Un-references the BLE handle and restarts scanning. Takes the connection handle and the error code as input.
--device found:  “bt_le_scan_cb_t” type callback for “bt_le_scan_start”. Stops scanning in case a device with less than -50 RSSI is present.  Does NOT take the connection handle as parameter, thus it has to be fed as a static variable. Extracts the type of the server (public or not)and the address of the server (“bt_addr_le_t” struct), the advertising type (scannable, connectable, directed, etc.), the signal strength rssi and the advertiser data (into a buffer). The callback then connects to the server. 
+- connected: callback from the BLE connection state (same as for server). Disconnects from the device right after connecting. Takes the connection handle and the error code as input.
+- disconnected: callback from the BLE connection state. Un-references the BLE handle and restarts scanning. Takes the connection handle and the error code as input.
+- device found:  “bt_le_scan_cb_t” type callback for “bt_le_scan_start”. Stops scanning in case a device with less than -50 RSSI is present.  Does NOT take the connection handle as parameter, thus it has to be fed as a static variable. Extracts the type of the server (public or not)and the address of the server (“bt_addr_le_t” struct), the advertising type (scannable, connectable, directed, etc.), the signal strength rssi and the advertiser data (into a buffer). The callback then connects to the server. 
 
 #### bt_conn confusion
 “bt_conn” does not seem to be a Zephyr struct, at least I have not managed to find it in the documentation. It seems more like an arbitrary handle – like a name – that our code can use to reference the connection for various reasons. I don’t know, why this is the case when “bt_conn” is an integral part for handling the connection in Zephyr.
